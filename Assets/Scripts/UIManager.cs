@@ -5,7 +5,11 @@ using UnityEngine;
 public enum GameMenu
 {
     None,
-    Puzzle
+    Title,
+    Game,
+    Credits,
+    Options,
+    GameOver
 }
 
 public class UIManager : MonoBehaviour
