@@ -32,7 +32,6 @@ public class GameScreen : Menu
     {
         if (puzzleGrid.CheckForWinner())
         {
-            uiMan.GoToMenu(GameMenu.GameOver);
             puzzleGrid.Clear();
         }
     }

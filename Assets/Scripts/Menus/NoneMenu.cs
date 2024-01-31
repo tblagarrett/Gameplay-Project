@@ -8,13 +8,11 @@ public class NoneMenu : Menu
     {
         base.OpenMenu();
         Cursor.lockState = CursorLockMode.None;
-        Debug.Log("None Menu Opened");
     }
 
     public override void CloseMenu()
     {
         base.CloseMenu();
         Cursor.lockState = CursorLockMode.None;
-        Debug.Log("None Menu Closed");
     }
 }
