@@ -112,4 +112,9 @@ public class UIManager : MonoBehaviour
             OpenMenu(currentMenu);
         }
     }
+
+    public GameObject GetMenu(GameMenu Menu)
+    {
+        return Menus[(int)Menu];
+    }
 }

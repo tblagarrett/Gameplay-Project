@@ -27,12 +27,12 @@ public class Room : MonoBehaviour
         
     }
 
-    public void CloseRoom()
+    public virtual void CloseRoom()
     {
         this.gameObject.SetActive(false);
     }
 
-    public void OpenRoom()
+    public virtual void OpenRoom()
     {
         this.gameObject.SetActive(true);
         levelManager = LevelManager.Instance;

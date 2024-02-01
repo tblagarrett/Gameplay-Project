@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameScreen : Menu
 {
-    PuzzleGrid puzzleGrid;
+    [HideInInspector] public PuzzleGrid puzzleGrid;
     UIManager uiMan;
     private void Start()
     {
@@ -19,7 +19,6 @@ public class GameScreen : Menu
     {
         base.OpenMenu();
         Cursor.lockState = CursorLockMode.None;
-        puzzleGrid.GenerateRandomGrid();
         Time.timeScale = 0;
     }
 

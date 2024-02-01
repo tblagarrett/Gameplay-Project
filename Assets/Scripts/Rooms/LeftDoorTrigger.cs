@@ -25,6 +25,10 @@ public class LeftDoorTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         target = room.GetComponent<Room>().leftDoorDest;
+
+        Debug.Log("Left Door: " + target);
+        Debug.Log("Right Door: " + room.GetComponent<Room>().rightDoorDest);
+
         levelManager.GoToRoom(target);
     }
 }
