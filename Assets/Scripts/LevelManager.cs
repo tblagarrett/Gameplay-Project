@@ -6,6 +6,7 @@ using UnityEngine;
 public enum RoomList
 {
     Empty,
+    Puzzle,
 }
 
 public class LevelManager : MonoBehaviour
