@@ -24,7 +24,7 @@ public class GameScreen : Menu
     public override void CloseMenu()
     {
         base.CloseMenu();
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Help from ChatGPT on learning how to get GameScreen to know when a button is clicked

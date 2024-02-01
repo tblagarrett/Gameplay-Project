@@ -9,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     public float distanceToGround;
+    private LevelManager levelManager;
 
     void Start()
     {
+        levelManager = LevelManager.Instance;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -51,5 +53,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(thrust * horizontalInput, rb.velocity.y, rb.velocity.z);
         }
+    }
+
+    // Teleport the player to the Current Room's spawn
+    public void TeleportToSpawn()
+    {
+        GetComponent<Transform>().position = levelManager.CurrentRoom().GetComponent<Room>().GetSpawnLocation();
     }
 }

@@ -71,15 +71,18 @@ public class LevelManager : MonoBehaviour
 
     public void GoToRoom(RoomList Room)
     {
-        if (currentRoom == Room)
-        {
-            Debug.LogWarning("Cannot move to " + Room + ", currently on");
-        }
-        else
-        {
-            CloseRoom(currentRoom);
-            currentRoom = Room;
-            OpenRoom(currentRoom);
-        }
+        CloseRoom(currentRoom);
+        currentRoom = Room;
+        OpenRoom(currentRoom);
+    }
+
+    public GameObject CurrentRoom()
+    {
+        return this.Rooms[(int)currentRoom];
+    }
+
+    public GameObject GetRandomRoom()
+    {
+        return this.Rooms[Random.Range(0, Rooms.Length)];
     }
 }
