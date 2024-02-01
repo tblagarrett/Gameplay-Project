@@ -2287,7 +2287,7 @@ PrefabInstance:
     - target: {fileID: 4501469440147949672, guid: 0c474c47efb22f04d971c5a4fe87aaa4,
         type: 3}
       propertyPath: m_Name
-      value: Room Template
+      value: Empty Room
       objectReference: {fileID: 0}
     - target: {fileID: 7632424357905562425, guid: 0c474c47efb22f04d971c5a4fe87aaa4,
         type: 3}
@@ -2667,6 +2667,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a791a1931f9d04347958cd2d7b53c4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rooms:
+  - {fileID: 1339191566}
+  startingRoom: 0
+  currentRoom: 0
 --- !u!1001 &842857316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4066,6 +4070,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb0c1d8affcc2294192abc8ff07818ba, type: 3}
+--- !u!1 &1339191566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4501469440147949672, guid: 0c474c47efb22f04d971c5a4fe87aaa4,
+    type: 3}
+  m_PrefabInstance: {fileID: 708942748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1339191567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7632424357905562425, guid: 0c474c47efb22f04d971c5a4fe87aaa4,

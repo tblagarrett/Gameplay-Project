@@ -16,12 +16,12 @@ public class Room : MonoBehaviour
         
     }
 
-    void CloseRoom()
+    public void CloseRoom()
     {
         this.gameObject.SetActive(false);
     }
 
-    void ShowRoom()
+    public void OpenRoom()
     {
         this.gameObject.SetActive(true);
     }
