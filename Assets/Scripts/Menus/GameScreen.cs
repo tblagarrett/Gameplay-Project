@@ -19,12 +19,15 @@ public class GameScreen : Menu
     {
         base.OpenMenu();
         Cursor.lockState = CursorLockMode.None;
+        puzzleGrid.GenerateRandomGrid();
+        Time.timeScale = 0;
     }
 
     public override void CloseMenu()
     {
         base.CloseMenu();
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
     // Help from ChatGPT on learning how to get GameScreen to know when a button is clicked
