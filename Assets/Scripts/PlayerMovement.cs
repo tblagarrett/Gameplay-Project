@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     // Teleport the player to the Current Room's spawn
     public void TeleportToSpawn()
     {
+        levelManager = LevelManager.Instance;
         GetComponent<Transform>().position = levelManager.CurrentRoom().GetComponent<Room>().GetSpawnLocation();
     }
 }

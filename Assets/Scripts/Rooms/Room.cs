@@ -6,8 +6,8 @@ public class Room : MonoBehaviour
 {
     [SerializeField]
     private Transform spawn;
-    public GameObject leftDoorDest;
-    public GameObject rightDoorDest;
+    public RoomList leftDoorDest;
+    public RoomList rightDoorDest;
     private LevelManager levelManager;
     private PlayerManager playerManager;
 
@@ -35,7 +35,9 @@ public class Room : MonoBehaviour
     public void OpenRoom()
     {
         this.gameObject.SetActive(true);
-        
+        levelManager = LevelManager.Instance;
+        playerManager = PlayerManager.Instance;
+
         // set the destinations of the doors
         leftDoorDest = levelManager.GetRandomRoom();
         rightDoorDest = levelManager.GetRandomRoom();

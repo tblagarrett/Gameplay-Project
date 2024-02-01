@@ -81,8 +81,8 @@ public class LevelManager : MonoBehaviour
         return this.Rooms[(int)currentRoom];
     }
 
-    public GameObject GetRandomRoom()
+    public RoomList GetRandomRoom()
     {
-        return this.Rooms[Random.Range(0, Rooms.Length)];
+        return (RoomList)Random.Range(0, Rooms.Length);
     }
 }
