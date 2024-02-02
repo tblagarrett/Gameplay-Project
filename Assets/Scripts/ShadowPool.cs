@@ -12,7 +12,8 @@ public class ShadowPool : MonoBehaviour
     private static ShadowPool _instance;
     public static ShadowPool Instance {  get { return _instance; } }
     private List<GameObject> pool = new List<GameObject>();
-    private int amountToPool = 60;
+    private int amountToPool = 20;
+    [SerializeField] private int lifespan = 1;
 
     [SerializeField] private GameObject shadowPrefab;
 
@@ -58,5 +59,11 @@ public class ShadowPool : MonoBehaviour
         }
 
         return null;
+    }
+
+    public IEnumerator Destroy(GameObject shadow)
+    {
+        yield return new WaitForSeconds(lifespan);
+        shadow.SetActive(false);
     }
 }

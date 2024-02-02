@@ -39,24 +39,21 @@ public class PlayerManager : MonoBehaviour
     {
         for(;;)
         {
+            // Spawn the shadow directly down from the player every loop
             Ray ray = new Ray(this.Player.transform.position, Vector3.down);
             RaycastHit hit;
             if (Physics.Raycast(this.Player.transform.position, Vector3.down, out hit, distanceToGround))
             {
-                Debug.Log(hit.point);
+                // Get a shadow from our pool, and set it to the position of the raycast, destroying it after it's lifespan
+                GameObject shadow = ShadowPool.Instance.GetPooledObject();
+                if (ShadowPool.Instance.GetPooledObject() != null)
+                {
+                    shadow.transform.position = hit.point + new Vector3(0, .1f, 0);
+                    shadow.SetActive(true);
+                    StartCoroutine(ShadowPool.Instance.Destroy(shadow));
+                }
             }
 
-            yield return new WaitForSeconds(.1f);
-        }
-    }
-
-    IEnumerator Fade(GameObject obj)
-    {
-        Color c = GetComponent<Renderer>().material.color;
-        for (float alpha = 1f; alpha >= 0; alpha -= 0.1f)
-        {
-            c.a = alpha;
-            GetComponent<Renderer>().material.color = c;
             yield return new WaitForSeconds(.1f);
         }
     }
