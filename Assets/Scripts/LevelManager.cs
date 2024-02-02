@@ -56,7 +56,6 @@ public class LevelManager : MonoBehaviour
 
     private bool CloseRoom(RoomList Room)
     {
-        Debug.Log("Closing: " + Room.ToString());
         Rooms[(int)Room].GetComponent<Room>().CloseRoom();
 
         return true;
@@ -64,7 +63,6 @@ public class LevelManager : MonoBehaviour
 
     private bool OpenRoom(RoomList Room)
     {
-        Debug.Log("Opening: " + Room.ToString());
         Rooms[(int)Room].GetComponent<Room>().OpenRoom();
         currentRoom = Room;
 
