@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(this.Player.transform.position, Vector3.down, out hit, distanceToGround))
             {
-                // Get a shadow from our pool, and set it to the position of the raycast, destroying it after it's lifespan
+                // Get a shadow from our pool, and set it to the position of the raycast, destroying it after its lifespan
                 GameObject shadow = ShadowPool.Instance.GetPooledObject();
                 if (ShadowPool.Instance.GetPooledObject() != null)
                 {

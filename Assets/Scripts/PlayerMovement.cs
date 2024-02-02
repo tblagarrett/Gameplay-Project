@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -33,13 +34,20 @@ public class PlayerMovement : MonoBehaviour
 
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
-        
+
+        if (Mathf.Abs(verticalInput) > stopThreshold && Mathf.Abs(horizontalInput) > stopThreshold)
+        {
+            Vector2 vector2 = new Vector2(horizontalInput, verticalInput).normalized;
+            rb.velocity = new Vector3(thrust * vector2.x, rb.velocity.y, thrust * vector2.y);
+            return;
+        }
+
         // Vertical Movement
         if (Mathf.Abs(verticalInput) < stopThreshold)
         {
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0f);
         } 
-        else
+        else if (Mathf.Abs(horizontalInput) < stopThreshold)
         {
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, thrust * verticalInput);
         }
@@ -49,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(0f, rb.velocity.y, rb.velocity.z);
         }
-        else
+        else if (Mathf.Abs(verticalInput) < stopThreshold)
         {
             rb.velocity = new Vector3(thrust * horizontalInput, rb.velocity.y, rb.velocity.z);
         }
