@@ -39,8 +39,9 @@ public class Room : MonoBehaviour
         playerManager = PlayerManager.Instance;
 
         // set the destinations of the doors
-        leftDoorDest = levelManager.GetRandomRoom();
-        rightDoorDest = levelManager.GetRandomRoom();
+        RoomList[] rooms = levelManager.GetShuffledRooms();
+        leftDoorDest = rooms[0];
+        rightDoorDest = rooms[1];
 
         // TP the player to spawn
         playerManager.Player.GetComponent<PlayerMovement>().TeleportToSpawn();

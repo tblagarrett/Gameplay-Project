@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -83,6 +84,22 @@ public class LevelManager : MonoBehaviour
 
     public RoomList GetRandomRoom()
     {
-        return (RoomList)Random.Range(0, Rooms.Length);
+        return (RoomList)UnityEngine.Random.Range(0, Rooms.Length);
+    }
+
+    public RoomList[] GetShuffledRooms()
+    {
+        RoomList[] tempRooms = (RoomList[])Enum.GetValues(typeof(RoomList));
+
+        //https://forum.unity.com/threads/randomize-array-in-c.86871/ To shuffle the array
+        for (int t = 0; t < tempRooms.Length; t++)
+        {
+            RoomList tmp = tempRooms[t];
+            int r = UnityEngine.Random.Range(t, tempRooms.Length);
+            tempRooms[t] = tempRooms[r];
+            tempRooms[r] = tmp;
+        }
+
+        return tempRooms;
     }
 }
