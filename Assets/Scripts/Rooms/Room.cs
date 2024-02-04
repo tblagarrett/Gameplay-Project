@@ -17,8 +17,9 @@ public class Room : MonoBehaviour
         levelManager = LevelManager.Instance;
         playerManager = PlayerManager.Instance;
 
-        leftDoorDest = levelManager.GetRandomRoom();
-        rightDoorDest = levelManager.GetRandomRoom();
+        RoomList[] rooms = levelManager.GetShuffledRooms();
+        leftDoorDest = rooms[0];
+        rightDoorDest = rooms[1];
     }
 
     // Update is called once per frame
