@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuzzlePodiumTrigger : MonoBehaviour
+public class HealingRoom : Room
 {
     private UIManager uiManager;
+    [SerializeField] GameObject water;
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +19,14 @@ public class PuzzlePodiumTrigger : MonoBehaviour
 
     }
 
-    // Go to the target room
-    private void OnTriggerEnter(Collider other)
+    public override void CloseRoom()
     {
-        uiManager = UIManager.Instance;
-        uiManager.GoToMenu(GameMenu.Game);
+        base.CloseRoom();
     }
 
-    private void OnTriggerExit(Collider other)
+    public override void OpenRoom()
     {
-        this.gameObject.SetActive(false);
+        base.OpenRoom();
+        water.SetActive(true);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PuzzleRoom : Room
 {
     private UIManager uiManager;
+    [SerializeField] private GameObject podiumTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +30,6 @@ public class PuzzleRoom : Room
         uiManager = UIManager.Instance;
         GameScreen puzzle = uiManager.GetMenu(GameMenu.Game).GetComponent<GameScreen>();
         puzzle.puzzleGrid.GenerateRandomGrid();
+        podiumTrigger.SetActive(true);
     }
 }
