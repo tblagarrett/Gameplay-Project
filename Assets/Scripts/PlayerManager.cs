@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public float distanceToGround;
+    public int currentHealth;
+    public int maxHealth;
     private static PlayerManager _instance; // make a static private variable of the component data type
     public static PlayerManager Instance { get { return _instance; } } // make a public way to access the private variable\
     public GameObject Player { get { return GameObject.FindWithTag("Player"); } }

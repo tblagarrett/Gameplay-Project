@@ -1070,7 +1070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2598, y: -0.13250732}
+  m_AnchoredPosition: {x: 2600, y: -0.21496582}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308617781
@@ -1148,6 +1148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99347c0089dc8f94e93fcc32cb7ffcf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartPrefab: {fileID: 5357050761987292835, guid: cb64b23cecf7d104faf65f3a50bd4ae3,
+    type: 3}
 --- !u!1 &313002215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5712,6 +5714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToGround: 2
+  currentHealth: 4
+  maxHealth: 4
 --- !u!1 &1744727301
 GameObject:
   m_ObjectHideFlags: 0
