@@ -32,8 +32,8 @@ public class GameScreen : Menu
         {
             timer -= Time.unscaledDeltaTime;
 
-            if (timer <= 0) { 
-                CloseMenu();
+            if (timer <= 0) {
+                uiMan.GoToMenu(GameMenu.None);
                 PlayerManager.Instance.currentHealth -= 1;
                 noneMenu.GetComponent<NoneMenu>().UpdateHearts();
             }

@@ -55,13 +55,12 @@ public class Room : MonoBehaviour
         // Only spawn the healing room if the player has lost health
         if (playerManager.currentHealth >= playerManager.maxHealth)
         {
-            if (leftDoorDest == RoomList.Healing)
+            while (leftDoorDest == RoomList.Healing || rightDoorDest == RoomList.Healing)
             {
-                leftDoorDest = rooms[2];
-            }
-            if (rightDoorDest == RoomList.Healing)
-            {
-                rightDoorDest = rooms[2];
+                rooms = levelManager.GetShuffledRooms();
+                leftDoorDest = rooms[0];
+                rightDoorDest = rooms[1];
+                Debug.Log("left: " + leftDoorDest.ToString() + " right: " + rightDoorDest.ToString());
             }
         }
 
