@@ -44,6 +44,27 @@ public class Room : MonoBehaviour
         leftDoorDest = rooms[0];
         rightDoorDest = rooms[1];
 
+        string list = "[";
+        for (int i = 0; i < rooms.Length; i++)
+        {
+            list += rooms[i].ToString() + ", ";
+        }
+        list += "]";
+        Debug.Log(list);
+
+        // Only spawn the healing room if the player has lost health
+        if (playerManager.currentHealth >= playerManager.maxHealth)
+        {
+            if (leftDoorDest == RoomList.Healing)
+            {
+                leftDoorDest = rooms[2];
+            }
+            if (rightDoorDest == RoomList.Healing)
+            {
+                rightDoorDest = rooms[2];
+            }
+        }
+
         // TP the player to spawn
         playerManager.Player.GetComponent<PlayerMovement>().TeleportToSpawn();
     }

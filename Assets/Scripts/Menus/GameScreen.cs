@@ -9,8 +9,10 @@ public class GameScreen : Menu
     [HideInInspector] public PuzzleGrid puzzleGrid;
     private float timer;
     [SerializeField] GameObject timerObj;
+    [SerializeField] GameObject noneMenu;
     private bool timerRunning;
     private UIManager uiMan;
+
     private void Start()
     {
         // Whenever a button is clicked, we run this function
@@ -30,7 +32,11 @@ public class GameScreen : Menu
         {
             timer -= Time.unscaledDeltaTime;
 
-            if (timer <= 0) { CloseMenu(); }
+            if (timer <= 0) { 
+                CloseMenu();
+                PlayerManager.Instance.currentHealth -= 1;
+                noneMenu.GetComponent<NoneMenu>().UpdateHearts();
+            }
 
             timerObj.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
         }
