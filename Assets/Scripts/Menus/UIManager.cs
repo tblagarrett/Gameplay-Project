@@ -123,5 +123,13 @@ public class UIManager : MonoBehaviour
         GameObject noneMenu = GetMenu(GameMenu.None);
         PlayerManager.Instance.currentHealth += amount;
         noneMenu.GetComponent<NoneMenu>().UpdateHearts();
+
+        if (PlayerManager.Instance.currentHealth <= 0) { GoToMenu(GameMenu.GameOver); }
+    }
+
+    // How to make exit game button https://www.youtube.com/watch?v=6nenEHhcNwQ&ab_channel=ThegamedevTraum
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

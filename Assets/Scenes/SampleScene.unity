@@ -614,6 +614,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4802492265496317460, guid: 3316aabd5dd7e2743ad1214e35350560,
         type: 3}
+    - target: {fileID: 3537911319757207455, guid: eb0c1d8affcc2294192abc8ff07818ba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537911319757207455, guid: eb0c1d8affcc2294192abc8ff07818ba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537911319757207455, guid: eb0c1d8affcc2294192abc8ff07818ba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2053576106}
+    - target: {fileID: 3537911319757207455, guid: eb0c1d8affcc2294192abc8ff07818ba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537911319757207455, guid: eb0c1d8affcc2294192abc8ff07818ba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537911319757207455, guid: eb0c1d8affcc2294192abc8ff07818ba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537911319757207455, guid: eb0c1d8affcc2294192abc8ff07818ba,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3854868903924776322, guid: eb0c1d8affcc2294192abc8ff07818ba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -748,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 6880250340658833403, guid: eb0c1d8affcc2294192abc8ff07818ba,
         type: 3}
       propertyPath: m_text
-      value: Back
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 6880250340658833403, guid: eb0c1d8affcc2294192abc8ff07818ba,
         type: 3}
@@ -790,7 +825,8 @@ PrefabInstance:
       propertyPath: m_enableExtraPadding
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5228987934594230018, guid: eb0c1d8affcc2294192abc8ff07818ba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6934,6 +6970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawn: {fileID: 1876335547}
   player: {fileID: 719558055}
+  playerManager: {fileID: 1698524369}
   chasePlayer: 0
 --- !u!1001 &4812368444699046785
 PrefabInstance:
