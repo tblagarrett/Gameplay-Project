@@ -8,7 +8,8 @@ public enum RoomList
 {
     Empty,
     Puzzle,
-    Healing
+    Healing,
+    Enemy
 }
 
 public class LevelManager : MonoBehaviour
