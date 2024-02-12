@@ -22,6 +22,7 @@ public class HealingFountain : MonoBehaviour
         if (other.tag == "Player")
         {
             water.SetActive(false);
+            UIManager.Instance.UpdatePlayerHealth(1);
         }
     }
 }

@@ -28,6 +28,7 @@ public class EnemyRoom : Room
 
     public override void OpenRoom()
     {
+        enemy.SetActive(true);
         enemy.GetComponent<EnemyScript>().TPToSpawn();
         base.OpenRoom();
         enemy.GetComponent<EnemyScript>().chasePlayer = true;

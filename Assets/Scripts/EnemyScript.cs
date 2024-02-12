@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour
 {
     [SerializeField] private GameObject enemySpawn;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerManager;
     public bool chasePlayer;
     // Start is called before the first frame update
     void Start()
@@ -26,5 +27,14 @@ public class EnemyScript : MonoBehaviour
     public void TPToSpawn()
     {
         this.gameObject.transform.position = enemySpawn.transform.position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            this.gameObject.SetActive(false);
+            UIManager.Instance.UpdatePlayerHealth(-1);
+        }
     }
 }

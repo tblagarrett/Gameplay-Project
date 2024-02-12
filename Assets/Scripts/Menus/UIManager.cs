@@ -117,4 +117,11 @@ public class UIManager : MonoBehaviour
     {
         return Menus[(int)Menu];
     }
+
+    public void UpdatePlayerHealth(int amount)
+    {
+        GameObject noneMenu = GetMenu(GameMenu.None);
+        PlayerManager.Instance.currentHealth += amount;
+        noneMenu.GetComponent<NoneMenu>().UpdateHearts();
+    }
 }

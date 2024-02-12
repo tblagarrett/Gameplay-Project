@@ -34,8 +34,7 @@ public class GameScreen : Menu
 
             if (timer <= 0) {
                 uiMan.GoToMenu(GameMenu.None);
-                PlayerManager.Instance.currentHealth -= 1;
-                noneMenu.GetComponent<NoneMenu>().UpdateHearts();
+                uiMan.UpdatePlayerHealth(-1);
             }
 
             timerObj.GetComponent<TextMeshProUGUI>().text = ((int) timer).ToString();
